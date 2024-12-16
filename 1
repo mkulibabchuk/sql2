@@ -1,0 +1,15 @@
+INSERT INTO artists (name) VALUES ('The Beatles'), ('Michael Jackson'), ('Ella Fitzgerald'), ('Queen');
+
+INSERT INTO genres (name) VALUES ('Rock'), ('Pop'), ('Jazz');
+
+INSERT INTO albums (title, release_year) VALUES ('Abbey Road', 1969), ('Thriller', 1982), ('Ella Sings Broadway', 1963), ('A Night at the Opera', 1975);
+
+INSERT INTO tracks (title, duration, album) VALUES ('Here Comes The Sun', '180', 1), ('Beat It', '240', 2), ('Manhattan', '210', 3), ('Bohemian Rhapsody', '360', 4), ('Come Together', '230', 1), ('Billie Jean', '280', 2), ('Too Darn Hot', '220', 3), ('Somebody to Love', '350', 4);
+
+INSERT INTO compilations (title, release_year) VALUES ('Best of Rock', 2018), ('Hits of the 80s', 2019), ('Jazz Classics', 2020), ('Queen Anthology', 2021);
+
+INSERT INTO artist_genres (artist, genre) VALUES (1, 1), (2, 2), (3, 3), (4, 1); - указал названию жанр 
+
+INSERT INTO artist_albums (artist_id, album_id) VALUES (1, 1), (2, 2), (3, 3), (4, 4); -  связь исполнителей и альбома
+
+INSERT INTO track_compilations (compilation_id, track_id) VALUES (1, 1), (1, 4), (2, 2), (2, 5), (3, 3), (3, 6), (4, 4), (4, 8); - связь сборника и трека
