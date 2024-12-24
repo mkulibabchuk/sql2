@@ -16,9 +16,13 @@ GROUP BY a.title;
 
 SELECT a.name
 FROM artists a
-LEFT JOIN artist_albums aa ON a.id = aa.artist_id
-LEFT JOIN albums al ON aa.album_id = al.id
-WHERE al.release_year != 2020 OR al.release_year IS NULL;
+WHERE a.name NOT IN (
+    SELECT a2.name
+    FROM artists a2
+    JOIN artist_albums aa2 ON a2.id = aa2.artist_id
+    JOIN albums al2 ON aa2.album_id = al2.id
+    WHERE al2.release_year = 2020
+);
 
 SELECT c.title
 FROM compilations c
